@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; color: #2d3436; margin: 0; padding: 40px; background: #f0f2f5; }
+        .receipt-container { max-width: 600px; margin: 0 auto; border: 2px solid #00a19a; border-radius: 20px; padding: 40px; position: relative; overflow: hidden; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #f39200; padding-bottom: 20px; }
+        .logo { width: 100px; margin-bottom: 10px; }
+        .company-name { color: #f39200; font-size: 1.5rem; font-weight: 700; margin: 0; }
+        .receipt-title { color: #00a19a; font-size: 1.2rem; font-weight: 600; margin-top: 5px; }
+        
+        .txn-details { margin: 20px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .detail-item { font-size: 0.95rem; }
+        .label { color: #636e72; font-weight: 500; display: block; font-size: 0.8rem; }
+        .value { color: #2d3436; font-weight: 600; }
+        
+        .amount-section { background: #e7f9f7; padding: 20px; border-radius: 12px; margin: 30px 0; text-align: center; }
+        .amount-label { color: #00a19a; font-weight: 600; font-size: 1rem; }
+        .amount-value { color: #2d3436; font-size: 2.5rem; font-weight: 700; display: block; }
+        
+        .status-badge { position: absolute; top: 120px; right: 20px; transform: rotate(15deg); border: 4px solid #00b894; color: #00b894; font-size: 1.5rem; font-weight: 800; padding: 10px 20px; border-radius: 10px; opacity: 0.2; pointer-events: none; }
+        
+        .footer { margin-top: 40px; text-align: center; font-size: 0.8rem; color: #636e72; border-top: 1px solid #dfe6e9; padding-top: 20px; }
+        .footer-item { margin-bottom: 5px; }
+        .bank-info { color: #00a19a; font-weight: 600; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="receipt-container">
+        <div class="status-badge">CLEARED</div>
+        <div class="header">
+            <!-- Logo placeholder or base64 if available -->
+            <h1 class="company-name">COCOON GROUP TUITION</h1>
+            <div class="receipt-title">FEE PAYMENT RECEIPT</div>
+        </div>
+        
+        <div class="txn-details">
+            <div class="detail-item">
+                <span class="label">DATE</span>
+                <span class="value">11 April, 2026</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">RECEIPT ID</span>
+                <span class="value">RCP-782641</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">STUDENT NAME</span>
+                <span class="value">SHRUTI PATEL</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">TXN ID</span>
+                <span class="value">TXN0004</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">INSTALLMENT NO.</span>
+                <span class="value">4</span>
+            </div>
+            <div class="detail-item">
+                <span class="label">CHEQUE NO.</span>
+                <span class="value">vfs-982</span>
+            </div>
+        </div>
+
+        <div class="amount-section">
+            <span class="amount-label">AMOUNT RECEIVED</span>
+            <span class="amount-value">₹1,000</span>
+            <div class="bank-info">Received on IDFC FIRST BANK</div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-item">Website: www.fguynwfcei.com</div>
+            <div class="footer-item">Email: cocoon@gmail.com</div>
+            <div class="footer-item">Contact: +91 36471 68764</div>
+            <div style="margin-top:15px; font-weight:700; color:#2d3436;">Thank you for choosing Cocoon Group Tuition!</div>
+        </div>
+    </div>
+</body>
+</html>
