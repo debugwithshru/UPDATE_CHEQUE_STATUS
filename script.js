@@ -417,6 +417,9 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('[DEBUG] PDF output generated successfully.');
             btn.textContent = 'Finalizing...';
 
+            // CRITICAL FIX: Hide the giant black capture overlay SO THE MODAL CAN BE SEEN!
+            overlay.style.display = 'none';
+
             // 4. Handle Download Choice (Premium Modal)
             const shouldDownload = await showModal({
                 title: 'RECEIPT READY',
