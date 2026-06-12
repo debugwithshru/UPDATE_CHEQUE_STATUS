@@ -159,17 +159,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const rows = data.table.rows;
             const cols = data.table.cols;
             
-            allTransactions = rows.map(row => {
+            let headers = [];
+            let dataRows = rows;
+            if (cols[0] && cols[0].label) {
+                headers = cols.map(c => c ? c.label : '');
+            } else if (rows.length > 0) {
+                headers = rows[0].c.map(cell => cell ? cell.v : '');
+                dataRows = rows.slice(1);
+            }
+            
+            allTransactions = dataRows.map(row => {
                 const record = {};
                 if (row.c) {
                     row.c.forEach((cell, i) => {
-                        const colLabel = cols[i] ? cols[i].label : null;
+                        const colLabel = headers[i];
                         if (colLabel) {
                             record[colLabel] = cell ? (cell.f || cell.v) : null;
                         }
                     });
                 }
                 return record;
+            }).filter(txn => {
+                const txnId = txn.Txn_ID || txn.txn_id;
+                return txnId && String(txnId).trim() !== '' && String(txnId).toLowerCase() !== 'txn_id';
             });
 
             renderTxnDropdown(allTransactions);
