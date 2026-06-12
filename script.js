@@ -321,12 +321,13 @@ document.addEventListener('DOMContentLoaded', () => {
             updated_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
         };
 
+        let overlay;
         try {
             // 1. Prepare Receipt HTML
             const receiptHtml = generateReceiptHTML(dataPayload);
             
             // Create a VISIBLE fullscreen overlay for high-fidelity capture
-            const overlay = document.createElement('div');
+            overlay = document.createElement('div');
             overlay.style.position = 'fixed';
             overlay.style.top = '0';
             overlay.style.left = '0';
