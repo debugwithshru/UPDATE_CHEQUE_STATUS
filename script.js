@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const WEBHOOK_URL = 'https://n8n.srv1498466.hstgr.cloud/webhook-test/2c91da46-9ea0-4740-bef7-b053a4335f93';
+    const WEBHOOK_URL = 'https://n8n.srv1498466.hstgr.cloud/webhook/2c91da46-9ea0-4740-bef7-b053a4335f93';
     const SHEET_ID = '16JAViFIXgf0oDqC5Nl0V6UpGqKrUVGAHkoEeYw1LdGs';
     const GID = '48600366';
 
@@ -477,12 +477,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Submission error:', error);
             
-            // Helpful error for local testing (CORS)
-            if (error.message.includes('Failed to fetch') || window.location.protocol === 'file:') {
+            if (error.message.includes('Failed to fetch')) {
                 if (overlay) overlay.remove();
                 await showModal({
-                    title: 'LOCAL RESTRICTION',
-                    message: 'Your browser blocked the server connection (CORS) because this is a local file.<br><br><b>THIS IS NORMAL:</b> Once deployed to Vercel, this will submit instantly. Your PDF is ready for manual use!',
+                    title: 'CONNECTION ERROR',
+                    message: 'Your browser could not reach the server (CORS or network issue).<br><br>If you are testing locally, this is normal. If you are on the live site, ensure the n8n webhook is active and configured correctly.',
                     icon: '🔒',
                     type: 'warning',
                     confirmText: 'Understood'
