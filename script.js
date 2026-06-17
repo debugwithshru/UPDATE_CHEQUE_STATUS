@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('clearanceForm');
     const txnSearchInput = document.getElementById('txn_id_search');
     const txnList = document.getElementById('txnList');
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const WEBHOOK_URL = 'https://n8n.srv1498466.hstgr.cloud/webhook/2c91da46-9ea0-4740-bef7-b053a4335f93';
+    const WEBHOOK_URL = 'https://n8n.srv1761768.hstgr.cloud/webhook/2c91da46-9ea0-4740-bef7-b053a4335f93';
     const SHEET_ID = '16JAViFIXgf0oDqC5Nl0V6UpGqKrUVGAHkoEeYw1LdGs';
     const GID = '48600366';
 
